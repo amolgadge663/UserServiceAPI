@@ -3,14 +3,18 @@ server:
 
 
 spring:
+
+  application:
+    name: USER-SERVICE
+
   datasource:
     url: jdbc:mysql://localhost:3306/microservices
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-  application:
-    name: USER-SERVICE
+  config:
+    import: configserver:http://localhost:8085
 
 
   jpa:
